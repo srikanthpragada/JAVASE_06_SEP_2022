@@ -6,11 +6,11 @@ public class Counter {
 
 	// Method
 	public void increment() {
-		value++;
+		this.value++;
 	}
 
 	public void decrement() {
-		value--;
+		this.value--;
 	}
 
 	public int getValue() {

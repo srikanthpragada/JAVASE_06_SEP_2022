@@ -7,20 +7,20 @@ public class SavingsAccount {
 	private double balance;
 
 	// Constructor
-	public SavingsAccount(int no, String name) {
-		acno = no;
-		ahname = name;
+	public SavingsAccount(int acno, String ahname) {
+		this.acno = acno;
+		this.ahname = ahname;
 	}
 	
 	public void deposit(double amount) {
-		balance += amount;
+		this.balance += amount;
 	}
 	
 	public void withdraw(double amount) {
-		balance -= amount;
+		this.balance -= amount;
 	}
 	
 	public double getBalance() {
-		return balance;
+		return this.balance;
 	}
 }
