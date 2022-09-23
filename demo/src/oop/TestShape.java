@@ -13,6 +13,10 @@ class Shape {
 		System.out.println(this.x);
 		System.out.println(this.y);
 	}
+	
+	public double area() {
+		return 0;
+	}
 }
 
 class Circle extends Shape {
@@ -53,16 +57,14 @@ public class TestShape {
 
 	public static void main(String[] args) {
 		Circle c = new Circle(10, 20, 5);
-		c.print();
-		System.out.println(c.area());
-		
 		Shape s = c;  // upcasting 
-		// s = new Square(10,20,20);  // upcasting 
 		
-		Square sq;
+		s.print();  // Runtime Polymorphism 
+		System.out.println(s.area());
 		
-		if(s instanceof Square)
-		    sq = (Square) s;  // Downcasting 
+		s = new Square(10,20,10);
+		s.print();  // Runtime Polymorphism 
+		System.out.println(s.area());
 		
 		
 	}
