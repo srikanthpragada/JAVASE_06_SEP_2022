@@ -1,6 +1,6 @@
 package oop;
 
-class Shape {
+abstract class Shape {
 	private int x, y;
 
 	public Shape(int x, int y) {
@@ -14,9 +14,8 @@ class Shape {
 		System.out.println(this.y);
 	}
 	
-	public double area() {
-		return 0;
-	}
+	public abstract double area();
+		 
 }
 
 class Circle extends Shape {
@@ -60,7 +59,7 @@ public class TestShape {
 		Shape s = c;  // upcasting 
 		
 		s.print();  // Runtime Polymorphism 
-		System.out.println(s.area());
+		System.out.println(s.area()); // Runtime Polymorphism
 		
 		s = new Square(10,20,10);
 		s.print();  // Runtime Polymorphism 
