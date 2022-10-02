@@ -16,7 +16,10 @@ public class SavingsAccount {
 		this.balance += amount;
 	}
 	
-	public void withdraw(double amount) {
+	public void withdraw(double amount) throws InsufficientFundsException {
+		if (amount > this.balance)
+			throw new InsufficientFundsException(this.balance, amount);
+		
 		this.balance -= amount;
 	}
 	
