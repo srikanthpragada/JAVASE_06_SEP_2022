@@ -15,7 +15,7 @@ public class CountCharWordLine {
 				break;
 
 			chars++;
-			if (ch == 32)
+			if (ch == 32) // space 
 				words++;
 			else if (ch == 10) // new line \n
 			{

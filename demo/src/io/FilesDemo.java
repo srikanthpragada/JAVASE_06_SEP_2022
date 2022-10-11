@@ -12,7 +12,5 @@ public class FilesDemo {
 		Path p = Path.of("d:\\classroom\\invalid.txt");
 		System.out.println(p.getClass());
 		Files.delete(p);
-
 	}
-
 }
