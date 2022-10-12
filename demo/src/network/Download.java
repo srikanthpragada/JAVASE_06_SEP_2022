@@ -11,13 +11,15 @@ public class Download {
 		InputStream is = urlobj.openStream();
 		FileOutputStream fo = new FileOutputStream("d:\\classroom\\st.jpg");
 		int ch = is.read();
+		int count = 0;
 		while (ch != -1) {
+			count ++;
 			fo.write(ch);
 			ch = is.read();
 		}
 		fo.close();
 		is.close();
-		System.out.println("Download completed!");
+		System.out.printf("Download completed! %d bytes downloaded", count);
 	}
 
 }
