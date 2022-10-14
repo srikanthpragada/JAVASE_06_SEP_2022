@@ -1,10 +1,10 @@
 package coll;
 
-import java.util.TreeSet;
+import java.util.HashSet;
 
-class Point implements Comparable<Point> {
-	private int x,y;
-	public Point(int x, int y) {
+class MyPoint {
+	private int x, y;
+	public MyPoint(int x, int y) {
 		this.x  = x;
 		this.y  = y;
 	}
@@ -13,31 +13,29 @@ class Point implements Comparable<Point> {
 		return "x=" + x + ", y=" + y;
 	}
 	@Override
-	public int hashCode() {
-		return x * y;
-	}
-	@Override
 	public boolean equals(Object obj) {
-		Point other = (Point) obj;
+		System.out.println("Called");
+		MyPoint other = (MyPoint) obj;
 		return this.x == other.x && this.y == other.y;
 	}
-	@Override
-	public int compareTo(Point other) {
-	    return  (this.x * this.y) - (other.x * other.y);
+	@Override 
+	public int hashCode() {
+		return this.x;
 	}
 }
 
 public class TestHashSet {
 
 	public static void main(String[] args) {
-		 var points = new TreeSet<Point>();
+		 var points = new HashSet<MyPoint>();
+		  
+		 points.add( new MyPoint(1,2));
+		 points.add( new MyPoint(10,20));
+		 points.add( new MyPoint(11,12));
+		 points.add( new MyPoint(10,20));
+		 points.add( new MyPoint(1,20));
 		 
-		 points.add( new Point(1,2));
-		 points.add( new Point(10,20));
-		 points.add( new Point(11,12));
-		 points.add( new Point(10,10));
-		 
-		 for(Point p : points)
+		 for(MyPoint p : points)
 			 System.out.println(p);
 		 
 
